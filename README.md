@@ -1,5 +1,5 @@
 # p009-alexnet-cnn-model
-AlexNet model and its variations is trained on OxfordiiiT pet dataset. Effect of L2 regularization and BatchNorm in tuning model is observed. 
+AlexNet model and its variations is trained on OxfordiiiT pet dataset in TensorFlow framework. Effect of L2 regularization and BatchNorm in tuning model is observed. 
 
 # Dataset and Split
 The Oxford-IIIT pet dataset is a 37 category pet image dataset with roughly 200 images for each class. Data has 7349 images of pets and is split into 85:15 train/test data respectivle.
