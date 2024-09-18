@@ -2,7 +2,7 @@
 AlexNet model and its variations is trained on OxfordiiiT pet dataset in TensorFlow framework. Effect of L2 regularization and BatchNorm in tuning model is observed. 
 
 # Dataset and Split
-The Oxford-IIIT pet dataset is a 37 category pet image dataset with roughly 200 images for each class. Data has 7349 images of pets and is split into 85:15 train/test data respectivle.
+The Oxford-IIIT pet dataset is a 37 category pet image dataset with roughly 200 images for each class. Data has 7349 images of pets and is split into 85:15 train/test data respectively.
 # Data Augmentation
 Data augmentation plays important part in training model especially when data is limited. Dataset size is increased by 6 fold via augmentation techniques in file [tf_ata_augmentation](tf_data_augmentation.py). Original images are concatenated with central and corners crop. Central, top left, top right, bottom left, bottom left crops are additionally preprocessed by left_right_flip, random_hue, random_brightness, random_saturation, random_contrast; respectively. Moreover, corner crops are randomly left_right flipped using different seeds.
 # AlexNet Architecture
@@ -29,7 +29,6 @@ AlexNet archituecture is used on this data set. Data is very small so it perform
 | [2_alexnet_bn_conv_bias_lecunn_uniform_adam](2_alexnet_bn_conv_bias_lecunn_uniform_adam.ipynb) | AlexNet architecture but BatcNorm used (in place of LRN and after every convolution layer) with Adam optimizer and biases are uniform LeCun initialized |
 
 **Note**: In this project, weights/kernels of all layers using RELU are initialized with He iniatialization while softmax is Glorot initialized. Although original AlexNet was randomly inialized but later it was proved that certain initialization yield faster convergence.
-**Note**: 
 
 # AlexNet Variations Result Summary
 First of all, original AlexNet architecture with SGD momentum was trained as in file [0_org_alexnet_sgd](0_org_alexnet_sgd.ipynb). It was too slow and difficult to train so stopped after sometime(20 min). $\approx$ 9% accuracy was achieved yet. Then, diffrent biases's initializtion was tested. Among them, 0.1 and LeCun gave slight better results with 12% and 11% accuracy, respectively. But again training progress was slow. Modifying architecture to use L2 reBatchNorm inplace of "Local Response Normalization" layer boosted accuracies but with only Adam optimizer. [**1_alexnet_bn2_bias_0.1_adam**](1_alexnet_bn2_bias_0.1_adam.ipynb) achieved best result in experimentations with $\approx$ 32% accuracy.
