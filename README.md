@@ -10,7 +10,7 @@ The architecture of original AlexNet is below. L2 regularization and dropout was
 ![AlexNet Architecture](img/Presentation1.png) 
 # AlexNet and its variants experimented
 AlexNet archituecture is used on this data set. Data is very small so it performed poor. Here, different initializations, L2 regularizations, BatchNormalization (in place of LocalResponseNormalization) and optimization algorithms(SDG with momentum, Adam optimizier) are iteratively applied to find best performance when training from scratch.
-<br> Filename indicates the variation and is explained in below table:
+<br> L2 regularization is applied to all files. Filename indicates the variation and is explained in below table:
 
 | filename | explanation |
 |:-------|:-------|
